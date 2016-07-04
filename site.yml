@@ -1,0 +1,9 @@
+---
+- name: site.yml just for testroles
+  hosts: testgroup
+  user: root
+  gather_facts: False
+  #commit above if you use OS Facts.
+
+  roles:
+    - example

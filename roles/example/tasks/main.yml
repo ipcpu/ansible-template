@@ -1,0 +1,15 @@
+---
+
+- name: copy module using sha1 hash 
+  copy: src="localtime" dest="/tmp/localtime"
+  tags: copy_module
+
+
+- name: copy with template
+  template: src="resolv.j2" dest="/tmp/resolv.conf"
+  tags: template_module
+
+- name: rsync files 
+  synchronize: src="mk.conf" dest="/tmp/mk.conf" delete=yes recursive=yes
+  tags: rsync_module
+
